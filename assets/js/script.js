@@ -1,5 +1,8 @@
 var DateTime = luxon.DateTime;
 var dt = DateTime.now();
+var tasks = {
+    index: []
+};
 
 //display current date under main title
 function currentDate() {
@@ -23,6 +26,41 @@ function setColorState() {
 
     }
 };
+
+function saveTasks() {
+    localStorage.setItem("tasks", tasks);
+}
+
+$(".time-block").on("click", "article", function() {
+    var text = $(this).text();
+    var classList = this.classList.toString();
+    var idList = this.id;
+    var textInput = $("<textarea>")
+        .addClass(classList)
+        .val(text);
+
+    this.id = idList.toString();
+
+    $(this).replaceWith(textInput);
+    textInput.trigger("focus");
+    console.log(this.id);
+});
+
+$(".time-block").on("blur", "textarea", function() {
+    var text = $(this).text();
+    var classList = this.classList.toString();
+    var idList = this.id.toString();
+
+    taskArticle = $("<article>")
+        .addClass(classList)
+        .text(text);
+    
+    this.id = idList;
+
+    $(this).replaceWith(taskArticle);
+    console.log(this);
+    saveTasks();
+});
 
 currentDate()
 setColorState();
