@@ -18,7 +18,7 @@ This website uses JavaScript to dynamically edit HTML elements to display necess
 
 ## GitHub Repository Link
 
-[Code Quiz GitHub](https://github.com/kanellakise/ELK-workDayScheduler-Wk5)
+[Work Day Scheduler GitHub Repository](https://github.com/kanellakise/ELK-workDayScheduler-Wk5)
 
 ## Author
 Elijah Kanellakis
